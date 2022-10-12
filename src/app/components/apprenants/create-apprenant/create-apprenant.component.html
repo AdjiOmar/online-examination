@@ -168,7 +168,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" routerLink="/admin">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -205,8 +205,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/list-module">
-                <span class="menu-title">Module</span>
+              <a class="nav-link" routerLink="/list-groupe">
+                <span class="menu-title">Groupe</span>
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
@@ -330,7 +330,9 @@
                             <label class="col-sm-3 col-form-label">Groupe</label>
                             <div class="col-sm-9">
                               <select class="form-control" name="groupe" [(ngModel)]="apprenant.groupe" >
-                                <option *ngFor="let g of groups">{{ g.code }}</option>
+                                <option selected disabled>Choose...</option>
+                                <!-- <option *ngFor="let g of groups">{{ g.code }}</option> -->
+                                <option *ngFor="let g of groups" [ngValue]="g">{{ g.code }}</option>
                               </select>
                             </div>
                           </div>

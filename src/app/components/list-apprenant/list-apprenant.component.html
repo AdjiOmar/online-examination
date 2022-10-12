@@ -168,7 +168,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" routerLink="/admin">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -205,8 +205,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/list-module">
-                <span class="menu-title">Module</span>
+              <a class="nav-link" routerLink="/list-groupe">
+                <span class="menu-title">Groupe</span>
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
@@ -270,6 +270,7 @@
                             <th> Formation </th>
                             <th> Groupe </th>
                             <th> Evaluation </th>
+                             <th colspan="2">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -283,8 +284,17 @@
                             <td>{{ p.matricule }}</td>
                             <td>{{ p.niveau }}</td>
                             <td>{{ p.formation }}</td>
-                            <td>{{ p.groupe?.code}}</td>
+                            <!-- <td>{{ p.groupe }}</td> -->
+                            <td>{{ p.groupe?.code }}</td>
                             <td>{{ p.evaluations }}</td>
+                            <td>
+                              <span (click)="deleteApprenant(p.id) ">
+                          <img src="https://img.icons8.com/color/48/000000/filled-trash.png"/>
+                        </span>&nbsp; &nbsp;
+                        <span (click)="updateApprenant(p.id) ">
+                          <img src="https://img.icons8.com/nolan/48/approve-and-update.png"/>
+                        </span>
+                            </td>
 
                           </tr>
                         </tbody>

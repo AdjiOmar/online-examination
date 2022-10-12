@@ -1,10 +1,7 @@
-import { FormateurService } from './../../services/formateur.service';
-import { Router } from '@angular/router';
-import { SeanceService } from './../../services/seance.service';
-import { Formation } from './../../models/formation';
+import { Formateur } from './../../models/formateur';
 import { Component, OnInit } from '@angular/core';
-import { Formateur } from 'src/app/models/formateur';
-import { Seance } from 'src/app/models/seance';
+import { Router } from '@angular/router';
+import { FormateurService } from 'src/app/services/formateur.service';
 
 @Component({
   selector: 'app-create-formateur',
@@ -14,28 +11,32 @@ import { Seance } from 'src/app/models/seance';
 export class CreateFormateurComponent implements OnInit {
 
   formateur: Formateur = new Formateur();
-  formations: Formation[] = [];
-  seances: Seance[] = [];
-  constructor(private formateurService: FormateurService, private seanceService: SeanceService,
-  private router: Router) { }
+  // formations: Formation[] = [];
+  // groups: Groupe[] = [];
+
+  constructor(private formateurService: FormateurService, private router: Router) {
+
+  }
 
   ngOnInit(): void {
-    this.seanceService.getAll().subscribe((response) => {
-      this.seances = response;
+    this.formateurService.getAll().subscribe((response) => {
+      // this.formateur = response;
       console.log(response);
     })
   }
 
-   CreateFormateur(){
-     this.formateurService.create(this.formateur).subscribe((response) => {
-       console.log(response);
-       this.goBack();
-     }, error => console.log(error));
-    
+  public createFormateur() {
+    try {
+      this.formateurService.create(this.formateur).subscribe((response) => {
+        console.log(response);
+        this.goBack();
+      });
+    } catch (error) {
+      throw error;
+    }
   }
 
-  goBack(){
+  goBack() {
     this.router.navigate(['/admin']);
   }
-
 }

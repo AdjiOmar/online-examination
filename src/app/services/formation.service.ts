@@ -16,8 +16,8 @@ export class FormationService {
     return this.http.get<Formation[]>(`${this.url}`);
   }
 
-  public create(apprenant: Formation) : Observable<Object>{
-    return this.http.post(`${this.url}`, apprenant);
+  public create(formation: Formation) : Observable<Object>{
+    return this.http.post(`${this.url}`, formation);
   }
 
   public update(id: number, formation: Formation) : Observable<Object>{

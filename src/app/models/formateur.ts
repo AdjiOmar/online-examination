@@ -8,7 +8,4 @@ export class Formateur  extends Utilisateur {
   matricule?: string;
   formations?:Array<Formation>;
   seances?:Array<Seance>;
-  lastName: any;
-  create: any;
-
 }

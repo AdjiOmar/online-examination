@@ -2,10 +2,10 @@ import { Formateur } from './formateur';
 import { Module } from './module';
 
 export class Seance {
-  id?:number;
+  id!:number;
   localDateTime?: Date;
   duree?: string;
-  objesctifs?: string;
+  objectifs?: string;
   resume?: string;
   module?: Module;
   formateur?: Formateur;

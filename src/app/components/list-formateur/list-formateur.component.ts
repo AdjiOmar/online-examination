@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-formateur.component.css']
 })
 export class ListFormateurComponent implements OnInit {
+  [x: string]: any;
 
   formateur!: Formateur[];
+
 
   constructor(private formateurService:FormateurService, private router:Router) { }
 
@@ -26,6 +28,14 @@ export class ListFormateurComponent implements OnInit {
 
   updateFormateur(id: number){
     this.router.navigate(['update-formateur', id]);
+  }
+
+  public deletFormateur(id: number) {
+    this.formateurService.delete(id).subscribe(data => {
+      alert("Voulez-vous vraiment supprimer cet element");
+      console.log(data);
+      this.reload();
+    });
   }
 
   // deleteFormateur(id: number){

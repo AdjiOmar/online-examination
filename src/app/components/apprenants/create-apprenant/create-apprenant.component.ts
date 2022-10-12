@@ -1,3 +1,4 @@
+import { UtilisateurComponent } from './../../utilisateur/utilisateur.component';
 import { Groupe } from './../../../models/groupe';
 import { Formation } from './../../../models/formation';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,9 @@ export class CreateApprenantComponent implements OnInit {
   groups: Groupe[] = [];
 
   constructor(private apprenantService : ApprenantService, private groupeService: GroupeService,
-    private router: Router) { }
+    private router: Router) {
+      //super();
+     }
 
   ngOnInit(): void {
     this.groupeService.getAll().subscribe((response) => {
@@ -27,11 +30,15 @@ export class CreateApprenantComponent implements OnInit {
     })
   }
 
-  createApprenant(){
-    this.apprenantService.create(this.apprenant).subscribe((response) => {
+  public createApprenant(){
+    try {
+      this.apprenantService.create(this.apprenant).subscribe((response) => {
       console.log(response);
       this.goBack();
-    }, error => console.log(error));
+    });
+    } catch (error) {
+      throw error;
+    }
   }
 
   goBack(){

@@ -3,7 +3,8 @@ import { Apprenant } from './apprenant';
 import { Module } from './module';
 
 export class Formation {
-  id? : number;
+  id?: number;
+  nom?: string;
   dureeFormation?:string;
   typeFormation?: string;
   modules?:Array<Module>;

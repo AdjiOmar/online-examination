@@ -1,3 +1,4 @@
+import { ListGroupeComponent } from './components/list-groupe/list-groupe.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,13 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { CreateApprenantComponent } from './components/apprenants/create-apprenant/create-apprenant.component';
 import { FormsModule } from '@angular/forms';
-import { CreateFormateurComponent } from './components/create-formateur/create-formateur.component';
 import { ListApprenantComponent } from './components/list-apprenant/list-apprenant.component';
 import { ListFormateurComponent } from './components/list-formateur/list-formateur.component';
-import { ListModuleComponent } from './components/list-module/list-module.component';
 import { ListSeanceComponent } from './components/list-seance/list-seance.component';
 import { ListEvaluationComponent } from './components/list-evaluation/list-evaluation.component';
 import { ListFormationComponent } from './components/list-formation/list-formation.component';
+import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
+import { CreateFormateurComponent } from './components/create-formateur/create-formateur.component';
+import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { ListFormationComponent } from './components/list-formation/list-formati
     ApprenantComponent,
     RegisterComponent,
     CreateApprenantComponent,
-    CreateFormateurComponent,
     ListApprenantComponent,
     ListFormateurComponent,
-    ListModuleComponent,
     ListSeanceComponent,
     ListEvaluationComponent,
-    ListFormationComponent
+    ListFormationComponent,
+    ListGroupeComponent,
+    UtilisateurComponent,
+    CreateFormateurComponent,
+    CreateFormationComponent,
   ],
   imports: [
     BrowserModule,

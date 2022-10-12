@@ -24,7 +24,7 @@ export class GroupeService {
     return this.http.put<Object>(`${this.url}/${id}`, groupe);
   }
 
-  public delete(id: number) : Observable<Groupe>{
+  public delete(id: number) : Observable<Object>{
     return this.http.delete<Groupe>(`${this.url}/${id}`);
   }
 

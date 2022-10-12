@@ -24,5 +24,21 @@ export class ListApprenantComponent implements OnInit {
       console.log(response);
     })
   }
+   public deleteApprenant(id: number) {
+    this.groupeService.delete(id).subscribe(data => {
+      alert("Voulez-vous vraiment supprimer cet element");
+      console.log(data);
+      this.reload();
+    });
+  }
+
+  public updateApprenant(id: number){
+
+  }
+
+  public reload() {
+    window.location.reload();
+  }
+
 
 }

@@ -206,7 +206,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/list-module">
-                <span class="menu-title">Module</span>
+                <span class="menu-title">Groupe</span>
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
@@ -267,6 +267,7 @@
                             <th> Username </th>
                             <th> Matricule </th>
                             <th> Specialite</th>
+                            <th colspan="2">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -279,11 +280,18 @@
                             <td>{{ f.username }}</td>
                             <td>{{ f.matricule }}</td>
                             <td>{{ f.specialite }}</td>
+
                             <td>
                               <!-- <button (click)="deleteFormateur(f.id) " class="btn btn-danger ">Delete</button>&nbsp; -->
-                              <button (click)="formateurDetails(f.id) " class="btn btn-info ">Details</button>&nbsp;
-                              <button (click)="updateFormateur(f.id) " class="btn btn-success ">Update</button>
-                          </td>
+                              <!-- <button (click)="formateurDetails(f.id) " class="btn btn-info ">Details</button>&nbsp;
+                              <button (click)="updateFormateur(f.id) " class="btn btn-success ">Update</button> -->
+                              <span (click)="deletFormateur(f.id) ">
+                          <img src="https://img.icons8.com/color/48/000000/filled-trash.png"/>
+                        </span>&nbsp; &nbsp;
+                        <span (click)="updateFormateur(f.id) ">
+                          <img src="https://img.icons8.com/nolan/48/approve-and-update.png"/>
+                        </span>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
