@@ -8,7 +8,7 @@ import { Question } from '../models/question';
   providedIn: 'root'
 })
 export class QuestionService {
-  private url = environment.urlQuestion
+  private url = environment.urlQuestion;
 
   constructor(private http: HttpClient) { }
 

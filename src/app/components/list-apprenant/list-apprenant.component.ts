@@ -16,7 +16,7 @@ export class ListApprenantComponent implements OnInit {
   groupe!: Groupe[];
 
   constructor(private apprenantService: ApprenantService,
-         private groupeService: GroupeService,private route: Router) { }
+         private groupeService: GroupeService,private router: Router) { }
 
   ngOnInit(): void {
      this.apprenantService.getAll().subscribe((response) => {
@@ -25,15 +25,15 @@ export class ListApprenantComponent implements OnInit {
     })
   }
    public deleteApprenant(id: number) {
-    this.groupeService.delete(id).subscribe(data => {
-      alert("Voulez-vous vraiment supprimer cet element");
+    this.apprenantService.delete(id).subscribe(data => {
+      alert("Voulez-vous vraiment supprimer ce apprenant");
       console.log(data);
       this.reload();
     });
   }
 
-  public updateApprenant(id: number){
-
+  public updateApprenant(id: number) {
+     this.router.navigate(['update-apprenant', id]);
   }
 
   public reload() {

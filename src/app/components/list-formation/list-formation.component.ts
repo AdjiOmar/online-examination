@@ -38,7 +38,8 @@ export class ListFormationComponent implements OnInit {
     })
   }
 
-  public updateFormation(id: number){
+  public updateFormation(id: number) {
+     this.router.navigate(['update-formation', id])
 
   }
 

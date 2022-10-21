@@ -1,3 +1,10 @@
+import { ListQuestionComponent } from './components/list-question/list-question.component';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
+import { ListEvaluationComponent } from './components/list-evaluation/list-evaluation.component';
+import { CreateEvaluationComponent } from './components/create-evaluation/create-evaluation.component';
+import { FormateurComponent } from './components/formateur/formateur.component';
+import { CreateModuleComponent } from './components/create-module/create-module.component';
+import { ListModuleComponent } from './components/list-module/list-module.component';
 import { ListFormationComponent } from './components/list-formation/list-formation.component';
 import { ListSeanceComponent } from './components/list-seance/list-seance.component';
 import { ListFormateurComponent } from './components/list-formateur/list-formateur.component';
@@ -15,17 +22,28 @@ import { CreateFormateurComponent } from './components/create-formateur/create-f
 import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 
 const routes: Routes = [
+  {path: 'list-question', component: ListQuestionComponent},
+  {path: 'create-question', component: CreateQuestionComponent },
+  {path: 'update-question/:id', component: CreateQuestionComponent },
+  {path: 'update-evaluation/:id', component: CreateEvaluationComponent },
+  {path: 'list-evaluation', component: ListEvaluationComponent },
+  {path: 'create-evaluation', component: CreateEvaluationComponent },
+  {path: 'formateur', component: FormateurComponent},
   {path: 'login', component: LoginComponent},
-  { path: 'apprenant', component: ApprenantComponent },
+  {path: 'apprenant', component: ApprenantComponent },
   {path: 'list-apprenant', component: ListApprenantComponent },
-
-  { path: 'create-apprenant', component: CreateApprenantComponent },
-  { path: 'create-formateur', component: CreateFormateurComponent },
-  { path: 'create-formation', component: CreateFormationComponent },
-    {path: 'list-formation', component: ListFormationComponent},
-
-
-  {path: 'list-formateur', component: ListFormateurComponent },
+  {path: 'create-apprenant', component: CreateApprenantComponent },
+  {path: 'create-formateur', component: CreateFormateurComponent },
+  {path: 'create-formation', component: CreateFormationComponent },
+  {path: 'list-formation', component: ListFormationComponent},
+  {path: 'list-formateur', component: ListFormateurComponent},
+  {path: 'list-module', component: ListModuleComponent},
+  {path: 'create-module', component: CreateModuleComponent },
+  { path: 'update-module/:id', component: CreateModuleComponent },
+  {path: 'update-apprenant/:id', component: CreateApprenantComponent },
+  {path: 'update-formation/:id', component: CreateFormationComponent },
+  { path: 'update-formateur/:id', component: CreateFormateurComponent},
+  {path: 'update-groupe/:id', component: ListGroupeComponent},
   {path: 'list-groupe', component: ListGroupeComponent },
   {path: 'list-seance', component: ListSeanceComponent},
   //{path: 'apprenant', component: LoginComponent},

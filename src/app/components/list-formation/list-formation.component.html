@@ -193,8 +193,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/list-evaluation">
-                <span class="menu-title">Evaluation </span>
+              <a class="nav-link" routerLink="/list-module">
+                <span class="menu-title">Module </span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
@@ -281,10 +281,10 @@
                             <td>{{ f.formateurs?.nom}}</td> -->
 
                             <td>
-                              <span (click)="deleteFormation(id) ">
+                              <span (click)="deleteFormation(f.id) ">
                           <img src="https://img.icons8.com/color/48/000000/filled-trash.png"/>
                         </span>&nbsp; &nbsp;
-                        <span (click)="updateFormation(id) ">
+                        <span (click)="updateFormation(f.id) ">
                           <img src="https://img.icons8.com/nolan/48/approve-and-update.png"/>
                         </span>
                             </td>

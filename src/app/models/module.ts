@@ -1,9 +1,9 @@
 import { Formation } from './formation';
 import { Evaluation } from './evaluation';
 export class Module {
-  id?: number;
+  id!: number;
   nom?: string;
-  volumeHoraire?: number;
+  volumehoraire?: number;
   evaluations?:Array<Evaluation>;
   formations?:Array<Formation>;
 }

@@ -247,7 +247,7 @@
             </div>
             <div class="nav-profile-text d-flex flex-column">
               <span class="font-weight-bold mb-2">Adji Ngone</span>
-              <span class="text-secondary text-small">Gestionnaire</span>
+              <span class="text-secondary text-small">Formateur</span>
             </div>
             <i
               class="mdi mdi-bookmark-check text-success nav-profile-badge"
@@ -255,8 +255,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin">
-            <span class="menu-title">Dashboard</span>
+          <a class="nav-link" routerLink="/formateur">
+            <span class="menu-title">Formateur</span>
             <i class="mdi mdi-home menu-icon"></i>
           </a>
         </li>
@@ -264,90 +264,25 @@
           <a
             class="nav-link"
             data-bs-toggle="collapse"
-            routerLink="/list-formation"
+            routerLink="/list-evaluation"
           >
-            <span class="menu-title">Formation</span>
+            <span class="menu-title">Evaluation</span>
             <i class="menu-arrow"></i>
             <i class="mdi mdi-crosshairs-gps menu-icon"></i>
           </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <a class="nav-link" href="pages/ui-features/buttons.html"
-                  >Buttons</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/ui-features/typography.html"
-                  >Typography</a
-                >
-              </li>
-            </ul>
-          </div>
         </li>
+        <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="/list-typeEvaluation">
+                <span class="menu-title">Type Evaluation</span>
+                <i class="mdi mdi-contacts menu-icon"></i>
+              </a>
+            </li> -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="/list-formateur">
-            <span class="menu-title">Formateur</span>
-            <i class="mdi mdi-contacts menu-icon"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/list-module">
-            <span class="menu-title">Module</span>
+          <a class="nav-link" routerLink="/list-question">
+            <span class="menu-title">Question </span>
             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/list-apprenant">
-            <span class="menu-title">Apprenant</span>
-            <i class="mdi mdi-chart-bar menu-icon"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/list-groupe">
-            <span class="menu-title">Groupe</span>
-            <i class="mdi mdi-table-large menu-icon"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            data-bs-toggle="collapse"
-            routerLink="/list-seance"
-          >
-            <span class="menu-title">Seance</span>
-            <i class="menu-arrow"></i>
-            <i class="mdi mdi-medical-bag menu-icon"></i>
-          </a>
-          <div class="collapse" id="general-pages">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <a class="nav-link" href="pages/samples/blank-page.html">
-                  Blank Page
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/samples/login.html"> Login </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/samples/register.html">
-                  Register
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/samples/error-404.html">
-                  404
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/samples/error-500.html">
-                  500
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item sidebar-actions"></li>
       </ul>
     </nav>
     <!-- partial -->
@@ -358,7 +293,7 @@
             <span class="page-title-icon bg-gradient-primary text-white me-2">
               <i class="mdi mdi-chart-bar menu-icon"></i>
             </span>
-            ENREGISTRER UNE FORMATION
+            CREER DES QUESTIONS
           </h3>
           <nav aria-label="breadcrumb">
             <ul class="breadcrumb"></ul>
@@ -373,28 +308,26 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Nom</label>
+                      <label class="col-sm-3 col-form-label">Libele</label>
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
-                          name="nom"
-                          [(ngModel)]="formation.nom"
+                          name="libele"
+                          [(ngModel)]="question.libele"
                         />
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label"
-                        >dureeFormation</label
-                      >
+                      <label class="col-sm-3 col-form-label">Reponse1</label>
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
-                          name="dureeFormation"
-                          [(ngModel)]="formation.dureeFormation"
+                          name="reponse1"
+                          [(ngModel)]="question.reponse1"
                         />
                       </div>
                     </div>
@@ -403,32 +336,124 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label"
-                        >TypeFormation</label
-                      >
+                      <label class="col-sm-3 col-form-label">Reponse2</label>
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
-                          name="typeFormation"
-                          [(ngModel)]="formation.typeFormation"
+                          name="reponse2"
+                          [(ngModel)]="question.reponse2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Reponse3</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="Reponse3"
+                          [(ngModel)]="question.reponse3"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Response4</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="reponse4"
+                          [(ngModel)]="question.reponse4"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label"
+                        >BonneReponse</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="bonneReponse"
+                          [(ngModel)]="question.bonneReponse"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Evalution</label>
+                      <div class="col-sm-9">
+                        <select
+                          class="form-control"
+                          name="evaluation"
+                          [(ngModel)]="question.evaluation"
+                        >
+                          <option selected disabled>Choose...</option>
+                          <option *ngFor="let e of evaluations" [ngValue]="e">
+                            {{ e.nom }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
 
+                    {{ question | json }}
+                  </div>
+                  <!-- <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Evalution</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="evaluation" [(ngModel)]="question.evaluation" />
+                            </div>
+                          </div>
+                        </div> -->
+                </div>
+                <!-- <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Formation</label>
+                            <div class="col-sm-9">
+                              <select class="form-control" name="formation" [(ngModel)]="apprenant.formation" >
+                                <option selected disabled> Choose...</option>
+                                <option *ngFor="let f of formations" [ngValue]="f">{{ f.nom}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Groupe</label>
+                            <div class="col-sm-9">
+                              <select class="form-control" name="groupe" [(ngModel)]="apprenant.groupe" >
+                                <option selected disabled>Choose...</option>
+                                 <option *ngFor="let g of groups">{{ g.code }}</option>
+                                <option *ngFor="let g of groups" [ngValue]="g">{{ g.code }}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
                 <hr />
                 <button
                   class="btn btn-gradient-primary font-weight-bold todo-list-add-btn"
-                  (click)="createFormation()"
+                  (click)="createQuestion()"
                 >
                   Save
                 </button>
                 &nbsp;
                 <button
                   class="btn btn-gradient-primary font-weight-bold todo-list-add-btn"
-                  routerLink="/admin"
+                  routerLink="/list-question"
                 >
                   Cancel
                 </button>

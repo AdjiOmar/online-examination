@@ -32,7 +32,7 @@ export class ListFormateurComponent implements OnInit {
 
   public deletFormateur(id: number) {
     this.formateurService.delete(id).subscribe(data => {
-      alert("Voulez-vous vraiment supprimer cet element");
+      alert("Voulez-vous vraiment supprimer ce formateur");
       console.log(data);
       this.reload();
     });

@@ -1,6 +1,6 @@
 import { Formateur } from './../../models/formateur';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormateurService } from 'src/app/services/formateur.service';
 
 @Component({
@@ -11,16 +11,22 @@ import { FormateurService } from 'src/app/services/formateur.service';
 export class CreateFormateurComponent implements OnInit {
 
   formateur: Formateur = new Formateur();
-  // formations: Formation[] = [];
-  // groups: Groupe[] = [];
+  id!: number;
 
-  constructor(private formateurService: FormateurService, private router: Router) {
+
+  constructor(private formateurService: FormateurService, private router: Router, private activatedRoute : ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.formateurService.getAll().subscribe((response) => {
       // this.formateur = response;
+      console.log(response);
+    })
+
+     this.id = this.activatedRoute.snapshot.params['id'];
+    this.formateurService.getById(this.id).subscribe((response) => {
+      this.formateur = response;
       console.log(response);
     })
   }
@@ -37,6 +43,6 @@ export class CreateFormateurComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/admin']);
+    this.router.navigate(['/list-formateur']);
   }
 }

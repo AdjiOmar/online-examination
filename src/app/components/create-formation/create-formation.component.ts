@@ -1,6 +1,6 @@
 import { Formation } from './../../models/formation';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormationService } from 'src/app/services/formation.service';
 
 @Component({
@@ -11,15 +11,20 @@ import { FormationService } from 'src/app/services/formation.service';
 export class CreateFormationComponent implements OnInit {
 
   formation: Formation = new Formation();
+  id!: number;
 
 
-  constructor(private formationService: FormationService, private router: Router) {
+  constructor(private formationService: FormationService, private router: Router, private activedRoute : ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.formationService.getAll().subscribe((response) => {
-    
+      console.log(response);
+    })
+     this.id = this.activedRoute.snapshot.params['id'];
+    this.formationService.getById(this.id).subscribe((response) => {
+      this.formation = response;
       console.log(response);
     })
   }

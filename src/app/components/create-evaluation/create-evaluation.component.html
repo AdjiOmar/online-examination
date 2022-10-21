@@ -151,7 +151,7 @@
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+       <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
@@ -162,73 +162,38 @@
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
                   <span class="font-weight-bold mb-2">Adji Ngone</span>
-                  <span class="text-secondary text-small">Gestionnaire</span>
+                  <span class="text-secondary text-small">Formateur</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <span class="menu-title">Dashboard</span>
+              <a class="nav-link" routerLink="/formateur">
+                <span class="menu-title">Formateur</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" routerLink="/list-formation">
-                <span class="menu-title">Formation</span>
+              <a class="nav-link" data-bs-toggle="collapse" routerLink="/list-evaluation">
+                <span class="menu-title">Evaluation</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-              </div>
+
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/list-formateur">
-                <span class="menu-title">Formateur</span>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="/list-typeEvaluation">
+                <span class="menu-title">Type Evaluation</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" routerLink="/list-module">
-                <span class="menu-title">Module</span>
+                <span class="menu-title">Module </span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/list-apprenant" >
-                <span class="menu-title">Apprenant</span>
-                <i class="mdi mdi-chart-bar menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/list-module">
-                <span class="menu-title">Groupe</span>
-                <i class="mdi mdi-table-large menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" routerLink="/list-seance">
-                <span class="menu-title">Seance</span>
-                <i class="menu-arrow"></i>
-                <i class="mdi mdi-medical-bag menu-icon"></i>
-              </a>
-              <div class="collapse" id="general-pages">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item sidebar-actions">
 
-            </li>
           </ul>
         </nav>
         <!-- partial -->
@@ -237,58 +202,109 @@
             <div class="page-header">
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
-                   <i class="mdi mdi-contacts menu-icon"></i>
-                </span> LISTE DES FORMATEURS
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </span> CREER UNE EVALUATION
               </h3>
               <nav aria-label="breadcrumb">
-                <ul class="breadcrumb">
-                </ul>
               </nav>
             </div>
-
-            <div class="row">
-              <div class="col-12 grid-margin">
+             <div class="col-12">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title" align="center">Formateurs Lists</h4>
-                    <!-- <button class="btn btn-info" routerLink="/create-formateur">Add</button> -->
-                    <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"routerLink="/create-formateur">Add</button>
-
-                    <hr>
-                    <div class="table-responsive">
+                    <!-- <h4 class="card-title">Horizontal Two column</h4> -->
+                     <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"routerLink="addQuestion()">Add</button>
+                     <!-- <form class="form-sample">
+                      <p class="card-description"> </p>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Libele</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="libele" [(ngModel)]="quest.libele" />
+                            </div>
+                          </div>
+                        </div>
+                         <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Reponse1</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="reponse1" [(ngModel)]="quest.reponse1" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                         <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Reponse2</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="reponse2" [(ngModel)]="quest.reponse2" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Reponse3</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="reponse3" [(ngModel)]="quest.reponse3" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Response4</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="reponse4" [(ngModel)]="quest.reponse4" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">BonneReponse</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="bonneReponse" [(ngModel)]="quest.bonneReponse"/>
+                            </div>
+                          </div>
+                        </div>
+                         <hr>
+                      <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" (click)="addQuestion()">Save</button> &nbsp;
+                       <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" routerLink="/list-evaluation" >Cancel</button>
+                     </form>
+                        <hr>
+                          <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
                             <th> NO. </th>
-                            <th> Nom </th>
-                            <th> Prenom </th>
-                            <th> Adresse </th>
-                            <th> Email </th>
-                            <th> Username </th>
-                            <th> Matricule </th>
-                            <th> Specialite</th>
+                            <th> Libele </th>
+                            <th> Reponse1 </th>
+                            <th> Reponse2 </th>
+                            <th> Reponse3 </th>
+                            <th> Reponse4 </th>
+                            <th> BonneReponse </th>
+
                             <th colspan="2">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let f of formateur">
-                            <td>{{ f.id }}</td>
-                            <td>{{ f.nom }}</td>
-                            <td>{{ f.prenom }}</td>
-                            <td>{{ f.adresse }}</td>
-                            <td>{{ f.email }}</td>
-                            <td>{{ f.username }}</td>
-                            <td>{{ f.matricule }}</td>
-                            <td>{{ f.specialite }}</td>
+                          <tr *ngFor="let q of question">
+                            <td>{{ q.id }}</td>
+                            <td>{{ q.libele}}</td>
+                            <td>{{ q.reponse1}}</td>
+                            <td>{{ q.reponse2 }}</td>
+                            <td>{{ q.reponse3 }}</td>
+                            <td>{{ q.reponse4}}</td>
+                            <td>{{ q.bonneReponse }}</td>
+
 
                             <td>
-                              <!-- <button (click)="deleteFormateur(f.id) " class="btn btn-danger ">Delete</button>&nbsp; -->
-                              <!-- <button (click)="formateurDetails(f.id) " class="btn btn-info ">Details</button>&nbsp;
-                              <button (click)="updateFormateur(f.id) " class="btn btn-success ">Update</button> -->
-                              <span (click)="deletFormateur(f.id) ">
+
+                              <span (click)="deleteQuestion(q.id) ">
                           <img src="https://img.icons8.com/color/48/000000/filled-trash.png"/>
                         </span>&nbsp; &nbsp;
-                        <span (click)="updateFormateur(f.id) ">
+                        <span (click)="updateQuestion(q.id) ">
                           <img src="https://img.icons8.com/nolan/48/approve-and-update.png"/>
                         </span>
                             </td>
@@ -296,11 +312,89 @@
                         </tbody>
                       </table>
                     </div>
+
+                      </div>
+  </form>
+
+                    <hr> -->
+
+                    <form class="form-sample">
+                      <p class="card-description"> </p>
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nom</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="nom" [(ngModel)]="evaluation.nom" />
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Description</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="description" [(ngModel)]="evaluation.description" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Date</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="date" [(ngModel)]="evaluation.date" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="row"> -->
+
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Duration</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="duration" [(ngModel)]="evaluation.duration" />
+                            </div>
+                          </div>
+                        </div>
+
+                         <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Nombre de question</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="nbreQuestion" [(ngModel)]="evaluation.nbreQuestion" />
+                            </div>
+                          </div>
+                        </div>
+                      <!-- </div> -->
+
+                       <div class="row">
+
+                        <!-- <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Question</label>
+                            <div class="col-sm-9">
+                              <ng-select placeholder="No Question Selected" name="question" (change)="selected($event)" [multiple]="true" [closeOnSelect]="false" [(ngModel)]="evaluation.question">
+                                <ng-option *ngFor="let q of question" [value]="q.id">{{q.libele}}</ng-option>
+                              </ng-select>
+                            </div>
+                          </div>
+                        </div> -->
+                      </div>
+
+                      <!-- <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" routerLink="/create-question">Question</button> &nbsp; -->
+
+                      <hr>
+                      <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" (click)="createEvaluation()">Save</button> &nbsp;
+                      <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" routerLink="/formateur" >Cancel</button>
+                    </form>
                   </div>
                 </div>
               </div>
-            </div>
-
 
 
           </div>
@@ -310,5 +404,23 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

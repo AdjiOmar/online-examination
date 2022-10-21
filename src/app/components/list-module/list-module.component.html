@@ -168,7 +168,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" routerLink="/admin">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -194,7 +194,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/list-module">
-                <span class="menu-title">Module</span>
+                <span class="menu-title">Module </span>
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </a>
             </li>
@@ -205,7 +205,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/list-module">
+              <a class="nav-link" routerLink="/list-groupe">
                 <span class="menu-title">Groupe</span>
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
@@ -237,22 +237,22 @@
             <div class="page-header">
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
-                   <i class="mdi mdi-contacts menu-icon"></i>
-                </span> LISTE DES FORMATEURS
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </span> LISTE DES MODULES
               </h3>
               <nav aria-label="breadcrumb">
                 <ul class="breadcrumb">
+
                 </ul>
               </nav>
             </div>
-
-            <div class="row">
+ <div class="row">
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title" align="center">Formateurs Lists</h4>
-                    <!-- <button class="btn btn-info" routerLink="/create-formateur">Add</button> -->
-                    <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"routerLink="/create-formateur">Add</button>
+                    <h4 class="card-title" align="center">Module Liste</h4>
+                    <!-- <button class="btn btn-info" routerLink="/create-apprenant" >Add</button> -->
+                    <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"routerLink="/create-module">Add</button>
 
                     <hr>
                     <div class="table-responsive">
@@ -261,37 +261,33 @@
                           <tr>
                             <th> NO. </th>
                             <th> Nom </th>
-                            <th> Prenom </th>
-                            <th> Adresse </th>
-                            <th> Email </th>
-                            <th> Username </th>
-                            <th> Matricule </th>
-                            <th> Specialite</th>
-                            <th colspan="2">Actions</th>
+                            <th> VolumeHoraire</th>
+                            <!-- <th> modules </th>
+                            <th> apprenants </th>
+                            <th> formateurs </th> -->
+
+                             <th colspan="2">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let f of formateur">
-                            <td>{{ f.id }}</td>
-                            <td>{{ f.nom }}</td>
-                            <td>{{ f.prenom }}</td>
-                            <td>{{ f.adresse }}</td>
-                            <td>{{ f.email }}</td>
-                            <td>{{ f.username }}</td>
-                            <td>{{ f.matricule }}</td>
-                            <td>{{ f.specialite }}</td>
+                          <tr *ngFor="let m of module">
+                            <td>{{ m.id }}</td>
+                            <td>{{ m.nom }}</td>
+                            <td>{{ m.volumehoraire }}</td>
+
+                            <!-- <td>{{ f.modules?.nom }}</td>
+                            <td>{{ f.apprenants?.nom }}</td>
+                            <td>{{ f.formateurs?.nom}}</td> -->
 
                             <td>
-                              <!-- <button (click)="deleteFormateur(f.id) " class="btn btn-danger ">Delete</button>&nbsp; -->
-                              <!-- <button (click)="formateurDetails(f.id) " class="btn btn-info ">Details</button>&nbsp;
-                              <button (click)="updateFormateur(f.id) " class="btn btn-success ">Update</button> -->
-                              <span (click)="deletFormateur(f.id) ">
+                              <span (click)="deleteModule(m.id) ">
                           <img src="https://img.icons8.com/color/48/000000/filled-trash.png"/>
                         </span>&nbsp; &nbsp;
-                        <span (click)="updateFormateur(f.id) ">
+                        <span (click)="updateModule(m.id) ">
                           <img src="https://img.icons8.com/nolan/48/approve-and-update.png"/>
                         </span>
                             </td>
+
                           </tr>
                         </tbody>
                       </table>
@@ -302,7 +298,6 @@
             </div>
 
 
-
           </div>
 
         </div>
@@ -310,5 +305,9 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
+
+
+
+
 
 

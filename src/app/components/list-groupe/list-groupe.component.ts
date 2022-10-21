@@ -1,5 +1,5 @@
 import { Groupe } from '../../models/groupe';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GroupeService } from '../../services/groupe.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
@@ -15,11 +15,16 @@ export class ListGroupeComponent implements OnInit {
   id!: number;
   color: any;
 
-  constructor(private groupeService: GroupeService, private router:Router) { }
+  constructor(private groupeService: GroupeService, private router:Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
      this.groupeService.getAll().subscribe((response: Groupe[]) => {
       this.groupe = response;
+      console.log(response);
+     })
+     this.id = this.activatedRoute.snapshot.params['id'];
+    this.groupeService.getById(this.id).subscribe((response) => {
+      this.group = response;
       console.log(response);
     })
   }
@@ -33,15 +38,17 @@ export class ListGroupeComponent implements OnInit {
 
   public deletGroupe(id: number) {
     this.groupeService.delete(id).subscribe(data => {
-      alert("Voulez-vous vraiment supprimer cet element");
+      alert("Voulez-vous vraiment supprimer ce groupe");
       console.log(data);
       this.reload();
     });
   }
 
-  public updateGroupe(id: number){
-
+  public updateGroupe(id: number) {
+    this.router.navigate(['update-groupe', id])
   }
+
+
 
   public reload() {
     window.location.reload();

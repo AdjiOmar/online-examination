@@ -1,3 +1,4 @@
+import { ListModuleComponent } from './components/list-module/list-module.component';
 import { ListGroupeComponent } from './components/list-groupe/list-groupe.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,6 +20,12 @@ import { ListFormationComponent } from './components/list-formation/list-formati
 import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
 import { CreateFormateurComponent } from './components/create-formateur/create-formateur.component';
 import { CreateFormationComponent } from './components/create-formation/create-formation.component';
+import { CreateModuleComponent } from './components/create-module/create-module.component';
+import { FormateurComponent } from './components/formateur/formateur.component';
+import { CreateEvaluationComponent } from './components/create-evaluation/create-evaluation.component';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ListQuestionComponent } from './components/list-question/list-question.component';
 
 @NgModule({
   declarations: [
@@ -34,15 +41,22 @@ import { CreateFormationComponent } from './components/create-formation/create-f
     ListEvaluationComponent,
     ListFormationComponent,
     ListGroupeComponent,
+    ListModuleComponent,
     UtilisateurComponent,
     CreateFormateurComponent,
     CreateFormationComponent,
+    CreateModuleComponent,
+    FormateurComponent,
+    CreateEvaluationComponent,
+    CreateQuestionComponent,
+    ListQuestionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
