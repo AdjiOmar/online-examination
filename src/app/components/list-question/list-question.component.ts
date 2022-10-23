@@ -13,20 +13,33 @@ import { QuestionService } from 'src/app/services/question.service';
 export class ListQuestionComponent implements OnInit {
 
   question!: Question[];
-  evaluation!: Evaluation[];
+  evaluations!: Evaluation[];
+  evaluation!: Evaluation;
+
+  evalId!: number;
+
   constructor(private questionService: QuestionService,
     private evaluationService: EvaluationService,
-              private router: Router) { }
+              private router: Router,
+              private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-     this.questionService.getAll().subscribe((response) => {
+    this.evalId = this._route.snapshot.params['evalId'];
+    console.log(this.evalId);
+
+    this.evaluationService.getById(this.evalId).subscribe((response) => {
+      this.evaluation = response;
+      console.log(response);
+    });
+
+     this.questionService.getQuestionsOfEvaluation(this.evalId).subscribe((response) => {
       this.question = response;
       console.log(response);
-    })
+    });
 
     this.evaluationService.getAll().subscribe((response) => {
-      this.evaluation = response;
+      this.evaluations = response;
       console.log(response);
     });
   }

@@ -306,19 +306,27 @@
               <form class="form-sample">
                 <p class="card-description"></p>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-9">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Libele</label>
                       <div class="col-sm-9">
-                        <input
+                        <textarea
+                          cols="6"
+                          rows="10"
                           type="text"
                           class="form-control"
                           name="libele"
                           [(ngModel)]="question.libele"
-                        />
+                        >
+                        </textarea>
                       </div>
                     </div>
                   </div>
+                  {{ question | json }}
+<!--                  {{ evaluation | json }}-->
+                  <hr />
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Reponse1</label>
@@ -332,8 +340,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Reponse2</label>
@@ -347,6 +353,8 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Reponse3</label>
@@ -360,8 +368,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Response4</label>
@@ -375,10 +381,21 @@
                       </div>
                     </div>
                   </div>
+
+                  <!-- <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Evalution</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" name="evaluation" [(ngModel)]="question.evaluation" />
+                            </div>
+                          </div>
+                        </div> -->
+                </div>
+                <div class="row">
                   <div class="col-md-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label"
-                        >BonneReponse</label
+                      >BonneReponse</label
                       >
                       <div class="col-sm-9">
                         <input
@@ -390,7 +407,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <!--<div class="col-md-6">
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Evalution</label>
                       <div class="col-sm-9">
@@ -408,16 +425,9 @@
                     </div>
 
                     {{ question | json }}
-                  </div>
-                  <!-- <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Evalution</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="evaluation" [(ngModel)]="question.evaluation" />
-                            </div>
-                          </div>
-                        </div> -->
+                  </div>-->
                 </div>
+
                 <!-- <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
@@ -444,6 +454,7 @@
                         </div>
                       </div> -->
                 <hr />
+                {{ question | json }}
                 <button
                   class="btn btn-gradient-primary font-weight-bold todo-list-add-btn"
                   (click)="createQuestion()"
@@ -453,7 +464,7 @@
                 &nbsp;
                 <button
                   class="btn btn-gradient-primary font-weight-bold todo-list-add-btn"
-                  routerLink="/list-question"
+                  [routerLink]="'/list-question/' + evalId"
                 >
                   Cancel
                 </button>

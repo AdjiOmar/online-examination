@@ -12,49 +12,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateQuestionComponent implements OnInit {
 
+  evalId: number = 0;
+  // id!: number ;
+
   question: Question = new Question();
+  // question!: Question;
   questions: Question[] = [];
-
   evaluation: Evaluation = new Evaluation();
-  evaluations: Evaluation[] = [];
-  id!: number;
 
-  // eval_id!: number;
-  // eval_title!: String;
+/*  question = {
+    evaluation: {
+      eval_id: 0
+    },
+    libele: '',
+    reponse1: '',
+    reponse2: '',
+    reponse3: '',
+    reponse4: '',
+    bonneReponse: '',
+    reponseChoisie: ''
+  }*/
 
   constructor(private questionService: QuestionService,
               private evaluationService: EvaluationService,
               private router: Router,
               private activatedRoute: ActivatedRoute
-
   ) { }
 
   ngOnInit(): void {
 
-    // this.eval_id = this.activatedRoute.snapshot.params['eval_id'];
-    // this.eval_title = this.activatedRoute.snapshot.params['title']
-    // this.question.evaluation!.id = this.eval_id;
+    this.evalId = this.activatedRoute.snapshot.params['evalId'];
+    console.log(this.evalId);
 
-    this.questionService.getAll().subscribe((response) => {
-      this.questions = response;
-      console.log(response);
+    this.evaluationService.getById(this.evalId).subscribe((response) => {
+      this.evaluation = response;
+      this.question.evaluation = response;
+      console.log(this.evaluation);
     });
 
-    this.evaluationService.getAll().subscribe((response) => {
-      // this.questio = response;
-      console.log(response);
-      this.evaluations = response;
-    });
+    // this.question.evaluation_eval_id = this.evalId;
+    // this.question.eval_id = this.evalId;
+    // this.question.evaluation["eval_id"] = this.evalId;
 
-      this.id = this.activatedRoute.snapshot.params['id'];
-      this.questionService.getById(this.id).subscribe((response) => {
-      this.question = response;
+ /*   this.evaluationService.getById(this.evalId).subscribe((response) => {
+      this.evaluation = response;
       console.log(response);
-    })
+    });*/
+
+    // this.question.evaluation = this.evaluation;
   }
 
 
   public createQuestion(){
+    // this.question.evaluation = this.evaluation;
     try {
       this.questionService.create(this.question).subscribe((response) => {
         console.log(response);
@@ -66,7 +76,7 @@ export class CreateQuestionComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(['/list-question']);
+    this.router.navigate(['/list-question/', this.evalId]);
   }
 
 }

@@ -16,6 +16,10 @@ export class QuestionService {
     return this.http.get<Question[]>(`${this.url}`);
   }
 
+  public getQuestionsOfEvaluation(evalId: number) : Observable<Question[]>{
+    return this.http.get<Question[]>(`${this.url}/eval/${evalId}`);
+  }
+
   public create(question: Question) : Observable<Object>{
     return this.http.post(`${this.url}`, question);
   }

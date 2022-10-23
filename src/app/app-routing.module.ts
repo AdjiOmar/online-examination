@@ -22,10 +22,10 @@ import { CreateFormateurComponent } from './components/create-formateur/create-f
 import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 
 const routes: Routes = [
-  {path: 'list-question', component: ListQuestionComponent},
-  {path: 'create-question', component: CreateQuestionComponent },
+  {path: 'list-question/:evalId', component: ListQuestionComponent},
+  {path: 'create-question/:evalId', component: CreateQuestionComponent },
   {path: 'update-question/:id', component: CreateQuestionComponent },
-  {path: 'update-evaluation/:id', component: CreateEvaluationComponent },
+  {path: 'update-evaluation/:evalId', component: CreateEvaluationComponent },
   {path: 'list-evaluation', component: ListEvaluationComponent },
   {path: 'create-evaluation', component: CreateEvaluationComponent },
   {path: 'formateur', component: FormateurComponent},

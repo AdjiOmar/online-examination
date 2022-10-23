@@ -1,5 +1,6 @@
 import { Evaluation } from './evaluation';
 export class Question {
+
    id!:number;
    libele?: string;
    reponse1?: string;
@@ -7,5 +8,8 @@ export class Question {
    reponse3?: string;
    reponse4?: string;
    bonneReponse?: string;
-   evaluation? : Evaluation;
+   reponseChoisie?: string;
+   // evaluation_eval_id?: number;
+   evaluation! : Evaluation;
+
 }

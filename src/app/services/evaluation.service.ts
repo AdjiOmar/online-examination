@@ -11,27 +11,26 @@ export class EvaluationService {
   private url = environment.urlEvaluation;
 
   constructor(private http: HttpClient) { }
-  
+
   public getAll(): Observable<Evaluation[]>{
     return this.http.get<Evaluation[]>(`${this.url}`);
   }
-
 
   public create(evaluation: Evaluation): Observable<Object>{
     console.log(this.url)
     return this.http.post(this.url, evaluation);
   }
 
-  public update(id: number, evaluation: Evaluation) : Observable<Object>{
-    return this.http.put<Object>(`${this.url}/${id}`, evaluation);
+  public update(evalId: number, evaluation: Evaluation) : Observable<Object>{
+    return this.http.put<Object>(`${this.url}/${evalId}`, evaluation);
   }
 
-  public delete(id: number) : Observable<Evaluation>{
-    return this.http.delete<Evaluation>(`${this.url}/${id}`);
+  public delete(evalId: number) : Observable<Evaluation>{
+    return this.http.delete<Evaluation>(`${this.url}/${evalId}`);
   }
 
-  public getById(id: number) : Observable<Evaluation>{
-    return this.http.get<Evaluation>(`${this.url}/${id}`);
+  public getById(evalId: number) : Observable<Evaluation>{
+    return this.http.get<Evaluation>(`${this.url}/${evalId}`);
   }
 
 }

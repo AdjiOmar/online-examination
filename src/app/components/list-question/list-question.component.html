@@ -197,7 +197,7 @@
               <h3 class="page-title">
                 <span class="page-title-icon bg-gradient-primary text-white me-2">
                   <i class="mdi mdi-chart-bar menu-icon"></i>
-                </span> LISTE DES QUESTION
+                </span> LISTE DES QUESTIONS
               </h3>
             </div>
 
@@ -206,7 +206,8 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title" align="center">Question Liste</h4>
-                    <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"routerLink="/create-question">Add</button>
+                    <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"
+                            [routerLink]="'/create-question/' + evalId">Add</button>
 
                     <hr>
                     <div class="table-responsive">
@@ -234,7 +235,7 @@
                             <td>{{ q.reponse3 }}</td>
                             <td>{{ q.reponse4}}</td>
                             <td>{{ q.bonneReponse }}</td>
-                            <td>{{ q.evaluation?.nom}}</td>
+                            <td>{{ evaluation?.nom}}</td>
 
 
                             <td>

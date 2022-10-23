@@ -1,5 +1,4 @@
-
-    <div class="container-scroller">
+<div class="container-scroller" xmlns="http://www.w3.org/1999/html">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -319,54 +318,83 @@
                     <hr> -->
 
                     <form class="form-sample">
+                      {{ evaluation | json }}
                       <p class="card-description"> </p>
                        <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nom</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="nom" [(ngModel)]="evaluation.nom" />
+                            <label class="col-sm-4 col-form-label">Nom</label>
+                            <div class="col-sm-8">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="nom"
+                                [(ngModel)]="evaluation.nom"
+                              />
                             </div>
                           </div>
                         </div>
 
                       </div>
                        <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Description</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="description" [(ngModel)]="evaluation.description" />
+                            <label class="col-sm-4 col-form-label">Description</label>
+                            <div class="col-sm-8">
+                              <textarea
+                                cols="6"
+                                rows="10"
+                                type="text"
+                                class="form-control"
+                                name="description"
+                                [(ngModel)]="evaluation.description"
+                              >
+                              </textarea>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Date</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="date" [(ngModel)]="evaluation.date" />
+                            <label class="col-sm-4 col-form-label">Date</label>
+                            <div class="col-sm-8">
+                              <input
+                                type="date"
+                                class="form-control"
+                                name="date"
+                                [(ngModel)]="evaluation.date"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
                       <!-- <div class="row"> -->
 
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Duration</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="duration" [(ngModel)]="evaluation.duration" />
+                            <label class="col-sm-4 col-form-label">Duration</label>
+                            <div class="col-sm-8">
+                              <input
+                                type="time"
+                                class="form-control"
+                                name="duration"
+                                [(ngModel)]="evaluation.duration"
+                              />
                             </div>
                           </div>
                         </div>
 
-                         <div class="col-md-6">
+                         <div class="col-md-8">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nombre de question</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" name="nbreQuestion" [(ngModel)]="evaluation.nbreQuestion" />
+                            <label class="col-sm-4 col-form-label">Nombre de question</label>
+                            <div class="col-sm-8">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="nbreQuestion"
+                                [(ngModel)]="evaluation.nbreQuestion"
+                              />
                             </div>
                           </div>
                         </div>
