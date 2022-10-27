@@ -1,0 +1,48 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-chart-bar menu-icon"></i>
+        </span>
+        LES QUESTIONS
+      </h3>
+    </div>
+
+    <!-- <div class="row"> -->
+    <div class="col-12 grid-margin">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" align="center" *ngFor="let e of evaluation">
+            {{ e.nom }}
+          </h4>
+
+          <hr />
+
+          <form *ngFor="let q of questions">
+            {{ q.libele }}<br /><br />
+
+            <label for="reponse1">{{ q.reponse1 }}</label> &nbsp; &nbsp;
+            <input type="radio" name="{{ 'reponse' + q.id }}" value="{{ q.reponse1 }}"
+              [(ngModel)]="questions" /><br />
+
+            <label for="reponse2">{{ q.reponse2 }}</label> &nbsp; &nbsp;
+            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse2 }}" [(ngModel)]="questions" /><br />
+
+            <label for="reponse3">{{ q.reponse3 }}</label> &nbsp; &nbsp;
+            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse3 }}" [(ngModel)]="questions" /><br />
+
+            <label for="reponse4">{{ q.reponse4 }}</label> &nbsp; &nbsp;
+            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse4 }}" [(ngModel)]="questions" /><br />
+
+            <hr />
+          </form>
+
+          <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task" routerLink="submit()">
+            EndTest
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

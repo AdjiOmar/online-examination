@@ -1,3 +1,6 @@
+import { ResultatComponent } from './components/resultat/resultat.component';
+import { DetailsEvaluationComponent } from './components/details-evaluation/details-evaluation.component';
+import { EvaluationApprenantComponent } from './components/evaluation-apprenant/evaluation-apprenant.component';
 import { ListQuestionComponent } from './components/list-question/list-question.component';
 import { CreateQuestionComponent } from './components/create-question/create-question.component';
 import { ListEvaluationComponent } from './components/list-evaluation/list-evaluation.component';
@@ -22,9 +25,12 @@ import { CreateFormateurComponent } from './components/create-formateur/create-f
 import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 
 const routes: Routes = [
-  {path: 'list-question', component: ListQuestionComponent},
+  {path: 'resultat' , component :ResultatComponent},
+  {path: 'details-evaluation/:id' , component: DetailsEvaluationComponent},
+  {path: 'evaluation-apprenant/:id', component: EvaluationApprenantComponent},
+  {path: 'list-question/:id', component: ListQuestionComponent},
   {path: 'create-question', component: CreateQuestionComponent },
-  {path: 'update-question/:id', component: CreateQuestionComponent },
+  {path: 'update-question/:id', component: CreateEvaluationComponent },
   {path: 'update-evaluation/:id', component: CreateEvaluationComponent },
   {path: 'list-evaluation', component: ListEvaluationComponent },
   {path: 'create-evaluation', component: CreateEvaluationComponent },

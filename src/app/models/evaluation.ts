@@ -8,7 +8,7 @@ export class Evaluation {
   description? : string;
   nbreQuestion? : number;
   duration? : Date;
-  question? : Array<Question>;
+  questions? : Question[];
   typeEvaluation? : TypeEvaluation;
   apprenant? : Apprenant;
 

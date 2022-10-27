@@ -13,10 +13,7 @@ export class ListEvaluationComponent implements OnInit {
 
   evaluation!: Evaluation[];
 
-  eval_id!: number;
-  eval_title!: String;
-  // groupe!: Groupe[];
-
+ 
 
   constructor(private evaluationService: EvaluationService,private router: Router) { }
 

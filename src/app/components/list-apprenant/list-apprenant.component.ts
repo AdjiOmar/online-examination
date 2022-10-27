@@ -13,7 +13,7 @@ import { GroupeService } from 'src/app/services/groupe.service';
 export class ListApprenantComponent implements OnInit {
 
   apprenant!: Apprenant[];
-  groupe!: Groupe[];
+   roupe!: Groupe[];
 
   constructor(private apprenantService: ApprenantService,
          private groupeService: GroupeService,private router: Router) { }

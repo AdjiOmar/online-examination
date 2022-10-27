@@ -1,3 +1,6 @@
+import { Evaluation } from './../../models/evaluation';
+import { Router } from '@angular/router';
+import { EvaluationService } from './../../services/evaluation.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprenantComponent implements OnInit {
 
-  constructor() { }
+  evaluation!: Evaluation[];
+
+  constructor( private evaluationService : EvaluationService, private router : Router) { }
 
   ngOnInit(): void {
+     this.evaluationService.getAll().subscribe((response) => {
+      this.evaluation = response;
+      console.log(response);
+    })
   }
 
 }

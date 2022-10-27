@@ -1,0 +1,46 @@
+<div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white me-2">
+                  <i class="mdi mdi-chart-bar menu-icon"></i>
+                </span> DETAILS DES EVALUATIONS
+              </h3>
+            </div>
+             <hr>
+              <!-- <a class="nav-link" href="pages/tables/basic-table.html">
+                <span class="menu-title">Tables</span>
+                <i class="mdi mdi-table-large menu-icon"></i>
+              </a> -->
+              <div class="row">
+                  <div class="col-md-6">
+                                     <img src="assets/images/dashboard/img_7.jpg" class="mb-6 mw-100 mw-100 rounded" alt="image">
+                  </div>
+
+               <div class="col-md-6 stretch-card grid-margin" *ngFor="let e of evaluation">
+                 <div class="nav-link" data-bs-toggle="collapse">
+                 <!-- [routerLink]="['/details-evaluation/', e.id]"> -->
+                 <!-- <div class="card bg-gradient-primary font-weight-bold card-img-holder text-white"> -->
+                  <!-- <div class="card-body"> -->
+                    <!-- <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" /> -->
+                    <h1 class="font-weight-normal mb-3 text-black"> DETAILS
+                      <!-- <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i> -->
+                    </h1>
+                     <h4 class="mb-5 text-black">Evaluation de: &nbsp; &nbsp;{{e.nom}}</h4>
+                     <h6 class="mb-5 text-black">Description: &nbsp; &nbsp;{{e.description}}
+                     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Et, perferendis? Eligendi, alias eos. Est ex harum explicabo
+                      accusamus molestiae fugit culpa eaque recusandae maiores quaerat,
+                      possimus vel laborum. Sint, voluptates?</p></h6>
+                     <h6 class="mb-5 text-black">Date: &nbsp; &nbsp;{{e.date}}</h6>
+                     <h6 class="mb-5 text-black">Duration:&nbsp; &nbsp;{{e.duration}}</h6>
+                     <h6  class="mb-5 text-black">Nombre de Question: &nbsp; &nbsp;{{e.nbreQuestion}}</h6>
+                             <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task"[routerLink] ="['/evaluation-apprenant',e.id ]">Demarer</button>
+
+                </div>
+
+               </div>
+              </div>
+               </div>
+
+</div>

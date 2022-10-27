@@ -48,7 +48,14 @@ export class CreateEvaluationComponent implements OnInit {
     // })
   }
 
-  public createEvaluation() {
+  public addQuestion() {
+    this.question.push(this.quest)
+    this.quest = new Question()
+    console.log(this.question)
+  }
+
+  public createEvaluation() {  
+    this.evaluation.questions = this.question
     try {
       // this.evaluation.question = this.question
       // console.log(this.evaluation.question)

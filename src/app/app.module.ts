@@ -26,6 +26,9 @@ import { CreateEvaluationComponent } from './components/create-evaluation/create
 import { CreateQuestionComponent } from './components/create-question/create-question.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ListQuestionComponent } from './components/list-question/list-question.component';
+import { EvaluationApprenantComponent } from './components/evaluation-apprenant/evaluation-apprenant.component';
+import { DetailsEvaluationComponent } from './components/details-evaluation/details-evaluation.component';
+import { ResultatComponent } from './components/resultat/resultat.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { ListQuestionComponent } from './components/list-question/list-question.
     CreateEvaluationComponent,
     CreateQuestionComponent,
     ListQuestionComponent,
+    EvaluationApprenantComponent,
+    DetailsEvaluationComponent,
+    ResultatComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,8 +3,8 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo1.png" weight="100" height="50" alt="logo" /></a>
+          <!-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a> -->
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -346,7 +346,7 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" name="date" [(ngModel)]="evaluation.date" />
+                              <input type="date" class="form-control" name="date" [(ngModel)]="evaluation.date" />
                             </div>
                           </div>
                         </div>
@@ -357,38 +357,121 @@
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Duration</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" name="duration" [(ngModel)]="evaluation.duration" />
+                              <input type="time" class="form-control" name="duration" [(ngModel)]="evaluation.duration" />
                             </div>
                           </div>
                         </div>
 
                          <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nombre de question</label>
+                            <label class="col-sm-3 col-form-label">NbreQuestion</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" name="nbreQuestion" [(ngModel)]="evaluation.nbreQuestion" />
+                              <input type="number" class="form-control" name="nbreQuestion" [(ngModel)]="evaluation.nbreQuestion" />
                             </div>
                           </div>
                         </div>
-                      <!-- </div> -->
+                          <hr />
 
-                       <div class="row">
-
-                        <!-- <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Question</label>
-                            <div class="col-sm-9">
-                              <ng-select placeholder="No Question Selected" name="question" (change)="selected($event)" [multiple]="true" [closeOnSelect]="false" [(ngModel)]="evaluation.question">
-                                <ng-option *ngFor="let q of question" [value]="q.id">{{q.libele}}</ng-option>
-                              </ng-select>
-                            </div>
-                          </div>
-                        </div> -->
+                <p class="card-description"></p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Libele</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="libele"
+                          [(ngModel)]="quest.libele"
+                        />
                       </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Reponse1</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="reponse1"
+                          [(ngModel)]="quest.reponse1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Reponse2</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="reponse2"
+                          [(ngModel)]="quest.reponse2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Reponse3</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="Reponse3"
+                          [(ngModel)]="quest.reponse3"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Response4</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="reponse4"
+                          [(ngModel)]="quest.reponse4"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label"
+                        >BonneReponse</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="bonneReponse"
+                          [(ngModel)]="quest.bonneReponse"
+                        />
+                      </div>
+                    </div>
+                  </div>
 
-                      <!-- <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" routerLink="/create-question">Question</button> &nbsp; -->
 
-                      <hr>
+                </div>
+
+                <hr />
+                <button
+                  class="btn btn-gradient-primary font-weight-bold todo-list-add-btn"
+                  (click)="addQuestion()"
+                >
+                  add question
+                </button>
+                &nbsp;
+
+                  <hr/>
                       <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" (click)="createEvaluation()">Save</button> &nbsp;
                       <button class="btn btn-gradient-primary font-weight-bold todo-list-add-btn" routerLink="/formateur" >Cancel</button>
                     </form>

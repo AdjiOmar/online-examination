@@ -15,7 +15,6 @@ export class CreateQuestionComponent implements OnInit {
   question: Question = new Question();
   questions: Question[] = [];
 
-  evaluation: Evaluation = new Evaluation();
   evaluations: Evaluation[] = [];
   id!: number;
 
