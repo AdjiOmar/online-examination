@@ -29,6 +29,8 @@ import { ListQuestionComponent } from './components/list-question/list-question.
 import { EvaluationApprenantComponent } from './components/evaluation-apprenant/evaluation-apprenant.component';
 import { DetailsEvaluationComponent } from './components/details-evaluation/details-evaluation.component';
 import { ResultatComponent } from './components/resultat/resultat.component';
+import { ModuleApprenantComponent } from './components/module-apprenant/module-apprenant.component';
+import { EvaluationComponent } from './components/evaluation/evaluation.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { ResultatComponent } from './components/resultat/resultat.component';
     EvaluationApprenantComponent,
     DetailsEvaluationComponent,
     ResultatComponent,
+    ModuleApprenantComponent,
+    EvaluationComponent,
   ],
   imports: [
     BrowserModule,

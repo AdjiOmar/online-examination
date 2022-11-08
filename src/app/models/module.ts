@@ -4,6 +4,6 @@ export class Module {
   id!: number;
   nom?: string;
   volumehoraire?: number;
-  evaluations?:Array<Evaluation>;
-  formations?:Array<Formation>;
+  evaluations?:Evaluation[];
+  formations?:Formation[];
 }

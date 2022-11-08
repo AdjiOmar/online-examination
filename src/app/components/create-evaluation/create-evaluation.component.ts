@@ -1,3 +1,5 @@
+import { ModuleService } from './../../services/module.service';
+import { Module } from './../../models/module';
 import { QuestionService } from './../../services/question.service';
 import { Question } from './../../models/question';
 import { EvaluationService } from './../../services/evaluation.service';
@@ -17,18 +19,22 @@ export class CreateEvaluationComponent implements OnInit {
   question: Question[] = [];
   // evaluations: Evaluation[] = [];
   id!: number;
-  eval_id!: number;
+  // eval_id!: number;
+    modul: Module[] = [];
+
 
   constructor(private evaluationService: EvaluationService,
               private questionService: QuestionService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+  private moduleService : ModuleService) { }
 
   ngOnInit(): void {
-    // this.evaluationService.getAll().subscribe((response) => {
-    //   this.evaluations = response;
-    //   console.log(response);
-    // });
+     this.moduleService.getAll().subscribe((response) => {
+      this.modul = response;
+      console.log(response);
+     })
+    
       this.id = this.activatedRoute.snapshot.params['id'];
       this.questionService.getById(this.id).subscribe((response) => {
       this.quest = response;

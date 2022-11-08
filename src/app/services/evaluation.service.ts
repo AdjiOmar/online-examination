@@ -40,6 +40,8 @@ export class EvaluationService {
   public getById(id: number) : Observable<Evaluation>{
     return this.http.get<Evaluation>(`${this.url}/${id}`);
   }
- 
+//  public getEvaluationByModuleId(id: any) : Observable<any>{
+//     return this.http.get<Evaluation[]>(this.url + "/module/" + id);
+//    }
 
 }

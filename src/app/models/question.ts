@@ -6,6 +6,7 @@ export class Question {
    reponse2?: string;
    reponse3?: string;
    reponse4?: string;
-   bonneReponse?: string;
+  bonneReponse?: string;
+  reponse?: string;
    evaluation? : Evaluation;
 }

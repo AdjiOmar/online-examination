@@ -1,48 +1,69 @@
 <div class="main-panel">
   <div class="content-wrapper">
-    <div class="page-header">
-      <h3 class="page-title">
+    <!-- <div class="page-header"> -->
+         
+    <div class="col-12 grid-margin" *ngIf="!isEvaluationCompleted">
+       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white me-2">
           <i class="mdi mdi-chart-bar menu-icon"></i>
         </span>
         LES QUESTIONS
-      </h3>
-    </div>
-
-    <!-- <div class="row"> -->
-    <div class="col-12 grid-margin">
+      </h3><br>
       <div class="card">
+
+          <ng-container >
         <div class="card-body">
           <h4 class="card-title" align="center" *ngFor="let e of evaluation">
             {{ e.nom }}
           </h4>
 
           <hr />
-
           <form *ngFor="let q of questions">
             {{ q.libele }}<br /><br />
 
             <label for="reponse1">{{ q.reponse1 }}</label> &nbsp; &nbsp;
-            <input type="radio" name="{{ 'reponse' + q.id }}" value="{{ q.reponse1 }}"
-              [(ngModel)]="questions" /><br />
+            <input type="radio" name="{{ 'reponse' + q.id }}" value="{{ q.reponse1 }}"[(ngModel)]="q.reponse" /><br />
 
             <label for="reponse2">{{ q.reponse2 }}</label> &nbsp; &nbsp;
-            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse2 }}" [(ngModel)]="questions" /><br />
+            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse2 }}" [(ngModel)]="q.reponse" /><br />
 
             <label for="reponse3">{{ q.reponse3 }}</label> &nbsp; &nbsp;
-            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse3 }}" [(ngModel)]="questions" /><br />
+            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse3 }}" [(ngModel)]="q.reponse" /><br />
 
             <label for="reponse4">{{ q.reponse4 }}</label> &nbsp; &nbsp;
-            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse4 }}" [(ngModel)]="questions" /><br />
+            <input type="radio"  name="{{ 'reponse' + q.id }}" value="{{ q.reponse4 }}" [(ngModel)]="q.reponse" /><br />
 
             <hr />
-          </form>
 
-          <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task" routerLink="submit()">
+                 </form>
+
+          <button (click)="submit()" class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn" id="add-task" >
             EndTest
           </button>
         </div>
+                </ng-container>
+                </div>
+                </div>
+
+       <div class="col-9 grid-margin">
+            <div class="card">
+
+                 <ng-container *ngIf="isEvaluationCompleted">
+                    <div class="row d-flex justify-content-between">
+                        <div class="text-center">
+                            <h1>Felicitations!!!!!! <br>Vous avez fini l'evaluation. <br>ci-dessous vous avez vos resultat:
+                                 <p>Nombre de question :  {{questions.length}}</p>
+                                 <p>Les questions non repondu : {{nonRepondu}}</p>
+                                 <p>Les bonnes reponses : {{trouve}}</p>
+                                 <p>Les mauvaises reponses : {{fausse}}</p>
+                                 <p> Vous avez obtenu : {{obtenu}} %</p>
+                                  <p class="text-right"><a class="btn btn-primary btn-large" routerLink="/home">Cancel</a></p> 
+                          </h1>
+                          </div>
+                        
+                    </div>
+                </ng-container>
       </div>
     </div>
-  </div>
-</div>
+
+    
