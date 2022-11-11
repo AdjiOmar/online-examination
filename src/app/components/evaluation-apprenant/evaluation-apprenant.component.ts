@@ -51,7 +51,7 @@ export class EvaluationApprenantComponent implements OnInit {
     })
   }
   submit() {
-    this.isEvaluationCompleted = true;
+    this.isEvaluationCompleted = true; 
     this.questions.forEach((q: any) => {
       if (q.reponse != q.bonneReponse) {
         this.fausse++;

@@ -31,6 +31,9 @@ import { DetailsEvaluationComponent } from './components/details-evaluation/deta
 import { ResultatComponent } from './components/resultat/resultat.component';
 import { ModuleApprenantComponent } from './components/module-apprenant/module-apprenant.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
+import { MessageComponent } from './components/message/message.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { EvaluationComponent } from './components/evaluation/evaluation.componen
     ResultatComponent,
     ModuleApprenantComponent,
     EvaluationComponent,
+    MessageComponent,
+    HomeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

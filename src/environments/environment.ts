@@ -16,6 +16,9 @@ export const environment = {
   urlTypeEvaluation: "http://localhost:8080/typeEvaluation",
   urlEvaluation: "http://localhost:8080/evaluation",
   urlGestionnaire: "http://localhost:8080/gestionnaire",
+  urlMessage: "http://localhost:8080/message",
+  urlUsers:"http://localhost:8080/test"
+
 
 };
 

@@ -1,3 +1,6 @@
+import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { MessageComponent } from './components/message/message.component';
 import { EvaluationComponent } from './components/evaluation/evaluation.component';
 import { ModuleApprenantComponent } from './components/module-apprenant/module-apprenant.component';
 import { ResultatComponent } from './components/resultat/resultat.component';
@@ -27,8 +30,8 @@ import { CreateFormateurComponent } from './components/create-formateur/create-f
 import { CreateFormationComponent } from './components/create-formation/create-formation.component';
 
 const routes: Routes = [
-    {path: 'evaluation' , component :EvaluationComponent},
-
+  {path: 'message' , component : MessageComponent},
+  {path: 'evaluation' , component :EvaluationComponent},
   {path: 'evaluation/:id' , component :EvaluationComponent},
   {path: 'resultat' , component :ResultatComponent},
   {path: 'module-apprenant/:id' , component : ModuleApprenantComponent},
@@ -57,11 +60,13 @@ const routes: Routes = [
   { path: 'update-formateur/:id', component: CreateFormateurComponent},
   {path: 'update-groupe/:id', component: ListGroupeComponent},
   {path: 'list-groupe', component: ListGroupeComponent },
-  {path: 'list-seance', component: ListSeanceComponent},
+  { path: 'list-seance', component: ListSeanceComponent },
   //{path: 'apprenant', component: LoginComponent},
-  {path: 'admin', component: AdminComponent},
+  { path: 'admin', component: AdminComponent },
+  { path: 'home', component: HomeComponent },
+  {path: 'profile', component: ProfileComponent},
   {path: 'register', component: RegisterComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'login'}
 ];
 

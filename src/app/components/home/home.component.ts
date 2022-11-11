@@ -2,21 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-formateur',
-  templateUrl: './formateur.component.html',
-  styleUrls: ['./formateur.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class FormateurComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
-
-  content?: string;
+ content?: string;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getFormateurBoard().subscribe(data => {
-      this.content = data;
-    },
+    this.userService.getPublicContent().subscribe( data => {
+        this.content = data;
+      },
       err => {
         this.content = JSON.parse(err.error).message;
       }

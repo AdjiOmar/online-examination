@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user.service';
 import { FormateurService } from './../../services/formateur.service';
 import { Formateur } from './../../models/formateur';
 import { ApprenantService } from './../../services/apprenant.service';
@@ -13,16 +14,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+
+  content?: string;
+
   [x: string]: any;
 
   apprenant!: Apprenant[];
   c!: Formateur[];
   groupe!: Groupe[];
 
-  constructor(private apprenantService: ApprenantService,
-        private formateurService: FormateurService, private groupeServ: GroupeService,private route: Router) { }
+  constructor(private userService : UserService,
+             private apprenantService: ApprenantService,
+            private formateurService: FormateurService,
+            private groupeServ: GroupeService, private route: Router) { }
 
   ngOnInit(): void {
+
+       this.userService.getGestionnaireBoard().subscribe((response => {
+        this.content = response;
+      }),
+      err => {
+        this.content = JSON.parse(err.error).message;
+      }
+    );
+
+
     // this.apprenantService.getAll().subscribe((response) => {
     //   this.apprenant = response;
     //   console.log(response);
@@ -55,3 +71,6 @@ export class AdminComponent implements OnInit {
   // }
 
 }
+
+
+
