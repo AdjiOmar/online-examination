@@ -22,14 +22,14 @@ export class EvaluationComponent implements OnInit {
       this.id = paramsId.id;
     });
 
-    // this.getEvaluationByModule(this.id)
+      this.getEvaluationByModule(this.id)
   }
 
 
-  // public getEvaluationByModule(id: number) {
-  //   this.evaluationService.getEvaluationByModuleId(id).subscribe((response) => {
-  //     this.evaluations = response;
-  //     console.log(this.evaluations);
-  //   })
-  // }
+  public getEvaluationByModule(id: number) {
+    this.evaluationService.getEvaluationByModuleId(id).subscribe((response) => {
+      this.evaluations = response;
+      console.log(this.evaluations);
+    })
+  }
 }

@@ -11,39 +11,53 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './apprenant.component.html',
   styleUrls: ['./apprenant.component.css']
 })
-// export class ApprenantComponent implements OnInit {
-//   evaluation!: Evaluation[];
-//   module!: Module[];
-
-//   constructor( private moduleService: ModuleService, private evaluationService: EvaluationService) { }
-
-//   ngOnInit(): void {
-//      this.moduleService.getAll().subscribe((response) => {
-//       this.module = response;
-//        console.log(response);
-//      })
-
-// this.evaluationService.getAll().subscribe((response) => {
-//       this.evaluation = response;
-//        console.log(response);
-//      })
-//   }
-
-// }
-
 export class ApprenantComponent implements OnInit {
+  evaluation!: Evaluation[];
+  module!: Module[];
 
- content?: string;
+   content?: string;
 
-  constructor(private userService: UserService) { }
+   constructor(private moduleService: ModuleService, private evaluationService: EvaluationService,
+   private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getApprenantBoard().subscribe( data => {
+
+ this.userService.getApprenantBoard().subscribe( data => {
         this.content = data;
       },
       err => {
         this.content = JSON.parse(err.error).message;
       }
     );
+  
+
+
+     this.moduleService.getAll().subscribe((response) => {
+      this.module = response;
+       console.log(response);
+     })
+
+this.evaluationService.getAll().subscribe((response) => {
+      this.evaluation = response;
+       console.log(response);
+     })
   }
+
 }
+
+// export class ApprenantComponent implements OnInit {
+
+//  content?: string;
+
+//   constructor(private userService: UserService) { }
+
+//   ngOnInit(): void {
+//     this.userService.getApprenantBoard().subscribe( data => {
+//         this.content = data;
+//       },
+//       err => {
+//         this.content = JSON.parse(err.error).message;
+//       }
+//     );
+//   }
+// }

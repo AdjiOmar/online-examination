@@ -269,7 +269,7 @@
                             <th> Niveau </th>
                             <th> Formation </th>
                             <th> Groupe </th>
-                            <th> Evaluation </th>
+                            <!-- <th> Evaluation </th> -->
                              <th colspan="2">Actions</th>
                           </tr>
                         </thead>
@@ -283,10 +283,10 @@
                             <td>{{ p.username }}</td>
                             <td>{{ p.matricule }}</td>
                             <td>{{ p.niveau }}</td>
-                            <td>{{ p.formation }}</td>
+                            <td>{{ p.formation?.nom }}</td>
                             <!-- <td>{{ p.groupe }}</td> -->
                             <td>{{ p.groupe?.code }}</td>
-                            <td>{{ p.evaluations }}</td>
+                            <!-- <td>{{ p.evaluations }}</td> -->
                             <td>
                               <span (click)="deleteApprenant(p.id) ">
                           <img src="https://img.icons8.com/color/48/000000/filled-trash.png"/>

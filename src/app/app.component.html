@@ -1,20 +1,22 @@
 <!-- <router-outlet></router-outlet> -->
 
-<div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">bezKoder</a>
+ <div id="app">
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <img src="assets/images/LG.jpg">
+    <a href="#" class="navbar-brand" >CodeInfini</a>
+
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+        <a href="/gestionnaire" class="nav-link" routerLink="gestionnaire">Gestionnaire Board</a>
       </li>
       <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+        <a href="/formateur" class="nav-link" routerLink="formateur">Formateur Board</a>
       </li>
       <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        <a href="/apprenant" class="nav-link" *ngIf="isLoggedIn" routerLink="apprenant">Apprenant</a>
       </li>
     </ul>
 

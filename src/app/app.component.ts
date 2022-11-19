@@ -12,25 +12,29 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+showFormateurBoard: any;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(
+    private tokenStorageService: TokenStorageService
+  ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
+      this.isLoggedIn = !!this.tokenStorageService.getToken();
 
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
+      if (this.isLoggedIn) {
+        const user = this.tokenStorageService.getUser();
+        this.roles = user.roles;
 
-      this.showAdminBoard = this.roles.includes('ROLE_GESTIONNAIRE');
-      this.showModeratorBoard = this.roles.includes('ROLE_FORMATEUR');
+        this.showAdminBoard = this.roles.includes('ROLE_GESTIONNAIRE');
+        this.showModeratorBoard = this.roles.includes('ROLE_FORMATEUR');
 
-      this.username = user.username;
+        this.username = user.username;
+      }
+    }
+
+    logout(): void {
+      this.tokenStorageService.signOut();
+      window.location.reload();
     }
   }
 
-  logout(): void {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
-}

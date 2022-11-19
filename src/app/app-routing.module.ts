@@ -17,7 +17,6 @@ import { ListFormationComponent } from './components/list-formation/list-formati
 import { ListSeanceComponent } from './components/list-seance/list-seance.component';
 import { ListFormateurComponent } from './components/list-formateur/list-formateur.component';
 import { ListApprenantComponent } from './components/list-apprenant/list-apprenant.component';
-// import { CreateFormateurComponent } from './create-formateur/create-formateur.component';
 import { CreateApprenantComponent } from './components/apprenants/create-apprenant/create-apprenant.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ApprenantComponent } from './components/apprenant/apprenant.component';
@@ -34,8 +33,9 @@ const routes: Routes = [
   {path: 'evaluation' , component :EvaluationComponent},
   {path: 'evaluation/:id' , component :EvaluationComponent},
   {path: 'resultat' , component :ResultatComponent},
-  {path: 'module-apprenant/:id' , component : ModuleApprenantComponent},
-  {path: 'details-evaluation/:id' , component: DetailsEvaluationComponent},
+  { path: 'module-apprenant/:id', component: ModuleApprenantComponent },
+    {path: 'details-evaluation', component: DetailsEvaluationComponent},
+  // {path: 'details-evaluation/:id' , component: DetailsEvaluationComponent},
   {path: 'evaluation-apprenant/:id', component: EvaluationApprenantComponent},
   {path: 'list-question/:id', component: ListQuestionComponent},
   {path: 'create-question', component: CreateQuestionComponent },

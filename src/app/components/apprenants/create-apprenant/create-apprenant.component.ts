@@ -1,3 +1,4 @@
+import { FormationService } from 'src/app/services/formation.service';
 import { UtilisateurComponent } from './../../utilisateur/utilisateur.component';
 import { Groupe } from './../../../models/groupe';
 import { Formation } from './../../../models/formation';
@@ -19,14 +20,15 @@ export class CreateApprenantComponent implements OnInit {
   groups: Groupe[] = [];
   id!: number;
 
-  constructor(private apprenantService : ApprenantService, private groupeService: GroupeService,
-    private router: Router,private activatedRoute : ActivatedRoute) {
+  constructor ( private apprenantService : ApprenantService, private groupeService: GroupeService,
+    private formationService: FormationService , private router: Router,private activatedRoute : ActivatedRoute) {
       //super();
      }
 
   ngOnInit(): void {
     this.groupeService.getAll().subscribe((response) => {
       this.groups = response;
+      this.formations = response;
       console.log(response);
     })
 
